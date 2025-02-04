@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Table Styles */
+  .custom-table {
+    @apply mt-4 w-full border-collapse border border-gray-300 rounded-xl shadow-lg overflow-hidden;
+  }
+  
+  .custom-thead {
+    @apply bg-blue-500 text-white;
+  }
+
+  .custom-th {
+    @apply px-6 py-3 text-left uppercase border border-white;
+  }
+  
+  .custom-td {
+    @apply border px-6 py-3;
+  }
+
+  .custom-td-right {
+    @apply border px-6 py-3 font-bold text-right;
+  }
+
+  .income-text {
+    @apply text-green-500;
+  }
+
+  .expense-text {
+    @apply text-red-500;
+  }
+
+  .hover-row {
+    @apply hover:bg-gray-100 transition duration-200;
+  }
+  /* ====== Navbar Styles ====== */
+  .navbar {
+    @apply bg-blue-500 text-white p-4 shadow-md;
+  }
+
+  .nav-container {
+    @apply container mx-auto flex justify-between items-center;
+  }
+
+  .nav-title {
+    @apply text-2xl font-bold ;
+  }
+
+  .hamburger-btn {
+    @apply md:hidden text-white focus:outline-none;
+  }
+
+  /* Navigation Links (Always Visible on Desktop) */
+  .nav-links {
+    @apply mt-2 gap-1 w-full md:w-auto flex flex-col md:flex-row md:items-center;
+  }
+
+  .nav-link {
+    @apply flex-1 text-center px-4 py-2 bg-blue-600 rounded-md md:bg-transparent hover:bg-blue-700 md:hover:bg-blue-600;
+    min-width: max-content;
+  }
+  .active {
+    @apply bg-blue-800 text-white font-bold rounded-md;
+  }
+}  /* ====== Filters Section ====== */
+.filters-container {
+  @apply flex flex-col md:flex-row gap-4 items-center;
+}
+
+.filter-box {
+  @apply w-full md:w-1/3;
+}
+
+.filter-input {
+  @apply mt-1 block w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300;
+}
+
+.filter-button {
+  @apply w-full md:w-auto bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600;
+}
+
+  
+
