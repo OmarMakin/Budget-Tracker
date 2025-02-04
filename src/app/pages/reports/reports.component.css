@@ -1,0 +1,33 @@
+.reports {
+  max-width: 800px;
+  margin: 20px auto;
+
+  .filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    label {
+      margin-right: 10px;
+    }
+
+    input {
+      border: solid;
+      border-radius: 5px;
+    }
+
+  }
+}
+.filtered-transactions {
+margin-top: 20px;
+
+  .income {
+    color: green;
+  }
+
+  .expense {
+    color: red;
+  }
+}
+

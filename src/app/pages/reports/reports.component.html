@@ -1,0 +1,55 @@
+<div class="reports">
+  <h1 class="text-3xl font-bold text-gray-800 mb-4">Reports</h1>
+
+  <!-- Filters -->
+  <div class="filters-container">
+    <!-- Category Filter -->
+    <div class="filter-box">
+      <label for="category" class="block text-gray-700">Filter by Category</label>
+      <input id="category" [(ngModel)]="categoryFilter" type="text" class="filter-input">
+    </div>
+  
+    <!-- Date Filter -->
+    <div class="filter-box">
+      <label for="date" class="block text-gray-700">Filter by Date</label>
+      <input id="date" [(ngModel)]="dateFilter" type="date" class="filter-input">
+    </div>
+  
+    <!-- Apply Filters Button -->
+    <div class="filter-box md:w-auto mt-7">
+      <button (click)="applyFilters()" class="filter-button">
+        Apply Filters
+      </button>
+    </div>
+  </div>
+  
+  <div class="filtered-transactions mt-6">
+    <h2 class="text-2xl font-bold mb-4">Filtered Transactions</h2>
+    <div class="overflow-x-auto">
+      <table class="custom-table">
+        <thead class="custom-thead">
+          <tr>
+            <th class="custom-th">Date</th>
+            <th class="custom-th">Category</th>
+            <th class="custom-th">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of filteredTransactions" class="hover-row">
+            <td class="custom-td">{{ transaction.date | date }}</td>
+            <td class="custom-td">{{ transaction.category }}</td>
+            <td class="custom-td-right"
+                [ngClass]="{
+                  'income-text': transaction.type === 'income',
+                  'expense-text': transaction.type === 'expense'
+                }">
+              {{ transaction.amount | currency:'USD':'symbol' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noData>
+      <p>No transactions match the filters.</p>
+    </ng-template>
+  </div>
+</div>
