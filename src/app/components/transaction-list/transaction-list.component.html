@@ -1,0 +1,24 @@
+<div class="overflow-x-auto">
+  <table class="custom-table">
+    <thead class="custom-thead">
+      <tr>
+        <th class="custom-th">Date</th>
+        <th class="custom-th">Category</th>
+        <th class="custom-th">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions" class="hover-row">
+        <td class="custom-td">{{ transaction.date | date }}</td>
+        <td class="custom-td">{{ transaction.category }}</td>
+        <td class="custom-td-right"
+            [ngClass]="{
+              'income-text': transaction.type === 'income',
+              'expense-text': transaction.type === 'expense'
+            }">
+          {{ transaction.amount | currency:'USD':'symbol' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
