@@ -1,0 +1,38 @@
+<div class="mt-6 max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
+  <h1 class="text-2xl font-bold text-gray-700">Add Transaction</h1>
+
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()" class="mt-4 space-y-4">
+    <label class="block">
+      <span class="text-gray-700">Date</span>
+      <input id="date" formControlName="date" type="date"
+             class="mt-1 block w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300">
+    </label>
+
+    <label class="block">
+      <span class="text-gray-700">Category</span>
+      <input id="category" formControlName="category" type="text"
+             class="mt-1 block w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300">
+    </label>
+
+    <label class="block">
+      <span class="text-gray-700">Amount</span>
+      <input id="amount" formControlName="amount" type="number"
+             class="mt-1 block w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300">
+    </label>
+
+    <label class="block">
+      <span class="text-gray-700">Type</span>
+      <select id="type" formControlName="type"
+              class="mt-1 block w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+    </label>
+
+    <button type="submit"
+            [disabled]="transactionForm.invalid"
+            class="mt-4 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600">
+      Submit
+    </button>
+  </form>
+</div>
