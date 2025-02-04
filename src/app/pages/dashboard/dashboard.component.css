@@ -1,0 +1,11 @@
+.dashboard {
+    text-align: center;
+    margin: 20px;
+  }
+  .summary-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  

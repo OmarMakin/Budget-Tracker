@@ -1,0 +1,10 @@
+<div class="container mx-auto p-6">
+  <h1 class="text-3xl font-bold text-gray-800">Dashboard</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+    <app-summary-card title="Total Income" [value]="totalIncome"></app-summary-card>
+    <app-summary-card title="Total Expenses" [value]="totalExpenses"></app-summary-card>
+    <app-summary-card title="Balance" [value]="balance"></app-summary-card>
+  </div>
+  <app-transaction-list></app-transaction-list>
+</div>
