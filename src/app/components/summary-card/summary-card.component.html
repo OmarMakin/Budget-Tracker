@@ -1,0 +1,10 @@
+<div class="bg-white shadow-lg rounded-xl p-5 text-center">
+  <h3 class="text-xl font-semibold text-gray-700">{{ title }}</h3>
+  <p class="text-2xl font-bold mt-2" [ngClass]="{
+      'text-green-500': title === 'Total Income',
+      'text-red-500': title === 'Total Expenses',
+      'text-blue-500': title === 'Balance'
+    }">
+    {{ value | currency:'USD':'symbol' }}
+  </p>
+</div>
