@@ -1,0 +1,25 @@
+<nav class="navbar" (document:click)="closeMenu($event)">
+  <div class="nav-container">
+    <!-- Title (Always Stays at Top Left) -->
+    <h1 class="nav-title">Budget Tracker</h1>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger-btn" (click)="toggleMenu($event)">
+      ☰
+    </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <div [ngClass]="{'hidden': !isMenuOpen, 'flex': isMenuOpen, 'flex-col': isMenuOpen, 'items-stretch': isMenuOpen, 'md:flex': true}"
+       class="nav-links">
+       <a routerLink="/" (click)="setActive('dashboard')" [ngClass]="{'active': activeLink === 'dashboard'}" class="nav-link">
+        Dashboard
+      </a>
+      <a routerLink="/add-transaction" (click)="setActive('add-transaction')" [ngClass]="{'active': activeLink === 'add-transaction'}" class="nav-link">
+        Add Transaction
+      </a>
+      <a routerLink="/reports" (click)="setActive('reports')" [ngClass]="{'active': activeLink === 'reports'}" class="nav-link">
+        View Reports
+      </a>
+    </div>
+</nav>
