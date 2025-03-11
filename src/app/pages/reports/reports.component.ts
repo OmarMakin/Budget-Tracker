@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from '../../services/transaction.service';
-import { Chart } from 'chart.js/auto';
 
 interface Transaction {
   date: string;

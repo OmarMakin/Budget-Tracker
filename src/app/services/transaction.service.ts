@@ -15,13 +15,11 @@ export class TransactionService {
 
   constructor() {}
 
-  // Add a new transaction
   addTransaction(transaction: Transaction) {
     this.transactions.push(transaction);
     console.log('Transaction added:', transaction);
   }
 
-  // Get all transactions
   getTransactions(): Transaction[] {
     return this.transactions;
   }
